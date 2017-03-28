@@ -69,7 +69,14 @@
           <div >
             <ul>
               @foreach ($tasks as $task)
-                <li>{{ $task }}</li>
+                <table>
+                  <tr>
+                    <li>{{ $task->title }}</li>
+                  </tr>
+                  <td>
+                    <li>{{ $task->body }}</li>
+                  </td>
+                </table>
               @endforeach
             </ul>
            </div>
