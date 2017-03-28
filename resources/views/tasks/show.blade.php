@@ -66,20 +66,12 @@
     </head>
     <body>
       <div class="content">
-          <div >
-            <ul>
-              @foreach ($tasks as $task)
-                <table>
-                  <tr>
-                    <li>{{ $task->title }}</li>
-                  </tr>
-                  <td>
-                    <li>{{ $task->body }}</li>
-                  </td>
-                </table>
-              @endforeach
-            </ul>
-           </div>
+        <div class="title m-b-md">
+          {{ $tasks->body }}
+         </div>
+         <div class="links">
+           <a href="/tasks">Back</a>
+         </div>
       </div>
     </body>
 </html>

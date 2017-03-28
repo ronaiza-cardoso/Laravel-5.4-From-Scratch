@@ -11,32 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about', function () {
-  # return view('about')->with('name', 'Ronaiza Cardoso');
-  $name = 'Ronaiza da Costa Cardoso';
-  return view('about', compact('name'));
-});
-
 Route::get('/tasks', function () {
-  // $tasks = [
-  //   'learnig lavarel',
-  //   'make some money',
-  //   'raise a child'
-  // ];
+  $tasks = DB::table('tasks')->latest()->get();
 
-  $tasks = DB::table('tasks')->get();
-
-  return view('tasks', compact('tasks'));
+  return view('tasks.index', compact('tasks'));
 });
 
-Route::get('/tasks/{tasks}', function ($id) {
-
+Route::get('tasks/{task}', function($id){
   $tasks = DB::table('tasks')->find($id);
-  dd($tasks);
 
   return view('tasks.show', compact('tasks'));
 });
