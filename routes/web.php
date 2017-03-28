@@ -16,5 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-  return view('about');
+  # return view('about')->with('name', 'Ronaiza Cardoso');
+  $name = 'Ronaiza da Costa Cardoso';
+  return view('about', compact('name'));
+});
+
+Route::get('/tasks', function () {
+  $tasks = [
+    'learnig lavarel',
+    'make some money',
+    'raise a child'
+  ];
+  return view('tasks', compact('tasks'));
 });
