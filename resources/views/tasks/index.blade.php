@@ -76,7 +76,7 @@
 
         <div class="links">
           @foreach ($tasks as $task)
-            <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
+            <a href="/tasks/{{ $task->id }}">{{ $task->body }}</a>
           @endforeach
          </div>
       </div>
