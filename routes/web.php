@@ -11,16 +11,5 @@
 |
 */
 
-Route::get('/tasks', function () {
-  #$tasks = DB::table('tasks')->latest()->get();
-  $tasks = App\Task::all();
-
-  return view('tasks.index', compact('tasks'));
-});
-
-Route::get('tasks/{task}', function($id){
-    #$tasks = DB::table('tasks')->find($id);
-    $tasks = App\Task::find($id);
-    
-  return view('tasks.show', compact('tasks'));
-});
+Route::get('/tasks', 'TaskController@index');
+Route::get('tasks/{task}', 'TaskController@show');
